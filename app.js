@@ -31,7 +31,6 @@ async function fetchMsgs() {
 // Hàm gửi (thêm) dữ liệu
 async function sendMsg() {
     const input = document.getElementById('msgInput');
-    const text = input.value.trim();
     if (text === '') return;
     
     let { error } = await supabaseClient.from('confessions').insert([{ message: text }]);

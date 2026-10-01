@@ -44,7 +44,7 @@ pipeline {
                 script {
                     def TELEGRAM_BOT_TOKEN = "8707448647:AAGH_pLrxL_LKCPLlrNyOAL0wHUTIoFA-YI"
                     def CHAT_ID = "8943465673"
-                    def REPO_NAME = "test_github_action"
+                    def REPO_NAME = ""
                     def BRANCH_NAME = "main"
                     def DEPLOY_URL = "https://test-github-action-ao3fgq2sd-yisika123rr.vercel.app"
 
