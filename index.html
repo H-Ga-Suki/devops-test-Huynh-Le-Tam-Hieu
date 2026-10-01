@@ -2,55 +2,10 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Hôm nay nói gì</title>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <title>DevOps Practical Exam - Huỳnh Lê Tâm Hiếu</title>
 </head>
 <body>
-    <h1>Có gì hay ?</h1>
-    <input type="text" id="msgInput" placeholder="Nhập gì đó đi...">
-    <button onclick="sendMsg()">Gửi</button>
-    
-    <h2>Các lời nhắn:</h2>
-    <ul id="list"></ul>
-
-    <script>
-        const SUPABASE_URL = 'https://dbxtwsnfhdsvvhpwwefr.supabase.co'; 
-        const SUPABASE_KEY = 'sb_publishable_rexxz2BRDiT2WAzsihvJlw_zZSj9ZJR';
-        
-    
-        const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-
-        // Hàm lấy dữ liệu
-        async function fetchMsgs() {
-            let { data, error } = await supabaseClient.from('confessions').select('*');
-            
-            if (error) {
-                console.error("Lỗi lấy dữ liệu:", error);
-                return;
-            }
-            
-            if (data) {
-                document.getElementById('list').innerHTML = data.map(d => `<li>${d.message}</li>`).join('');
-            }
-        }
-
-        // Hàm gửi dữ liệu
-        async function sendMsg() {
-            const input = document.getElementById('msgInput');
-            if (input.value.trim() === '') return;
-            
-            let { error } = await supabaseClient.from('confessions').insert([{ message: input.value }]);
-            
-            if (error) {
-                console.error("Lỗi gửi dữ liệu:", error);
-                alert("Gửi lỗi rồi, ấn F12 chuyển qua tab Console để xem lỗi nhé!");
-            } else {
-                input.value = ''; 
-                fetchMsgs(); 
-            }
-        }
-
-        fetchMsgs();
-    </script>
+    <h1>Chào mừng đến với trang Web CI/CD DevOps!</h1>
+    <p>Họ tên: Huỳnh Lê Tâm Hiếu - MSSV: 107292</p>
 </body>
 </html>
